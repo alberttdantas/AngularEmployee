@@ -1,0 +1,47 @@
+<mat-card appearance="outlined">
+<h1>{{btnTitle}}</h1>
+
+<form [formGroup]="employeeForm" (ngSubmit)="submit()" #formDir="ngForm">
+    <input type="hidden" formControlName="id">
+
+    <div class="input_box">
+        <mat-form-field class="example-full-width">
+            <mat-label for="name">Nome:</mat-label>
+            <input matInput id ="name" type="text" formControlName="name" placeholder="Insira o nome" required>
+        </mat-form-field>
+    </div>
+
+    <div class="input_box">
+        <mat-form-field class="example-full-width">
+            <mat-label for="name">Sobrenome:</mat-label>
+            <input matInput id ="lastName" type="text" formControlName="lastName" placeholder="Insira o sobrenome" required>
+        </mat-form-field>
+    </div>
+
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label for="departament">Departamento:</mat-label>
+            <mat-select id="departament" formControlName="departament" required>
+                <mat-option *ngFor="let option of departamentOptions" [value]="option.key">
+                    {{ option.value }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label for="shift">Turno:</mat-label>
+            <mat-select id="shift" formControlName="shift" required>
+                <mat-option *ngFor="let option of shiftOptions" [value]="option.key">
+                    {{ option.value }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="btn-box">
+        <button type="submit"  [disabled]="!employeeForm.valid" mat-flat-button >{{btnAction}}</button>
+        <button [routerLink]="['/']" type="button" mat-raised-button >Voltar</button>
+    </div>
+</form>
+</mat-card>

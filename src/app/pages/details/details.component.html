@@ -1,0 +1,63 @@
+<mat-card>
+    <div>
+        <h1>Detalhes do Funcionário</h1>
+    </div>
+
+    <div>
+        <form>
+            <div class="input_box">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Nome:</mat-label>
+                    <input matInput type="text" value="{{employee?.name}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input_box">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Sobrenome:</mat-label>
+                    <input matInput type="text" value="{{employee?.lastName}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input_box">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Departamento:</mat-label>
+                    <input matInput type="text" value="{{translateDepartament(employee?.departament)}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input_box">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Turno:</mat-label>
+                    <input matInput type="text" value="{{translateShift(employee?.shift)}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input_box">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Situação:</mat-label>
+                    <input matInput type="text" value="{{employee?.active == true ? 'Ativo' : 'Inativo'}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input_box">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Data de criação:</mat-label>
+                    <input matInput type="text" value="{{employee?.creationDate}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="input_box">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Data de alteração:</mat-label>
+                    <input matInput type="text" value="{{employee?.modificationDate}}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="btn-box">
+                <button (click)="InactiveEmployee($event)" mat-raised-button color="warn">Inativar Usuário</button>
+                <button [routerLink]="['/']" mat-raised-button>Voltar</button> 
+            </div>
+        </form>
+    </div>
+</mat-card>

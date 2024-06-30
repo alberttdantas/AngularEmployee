@@ -1,0 +1,23 @@
+mat-card {
+    width: 80%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 3rem;
+    margin-top: 5rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.mdc-button {
+    margin: 8px 8px 0px 0px;
+}
+
+p {
+    font-size: 1.4rem;
+}
